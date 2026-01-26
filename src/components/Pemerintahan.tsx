@@ -1,3 +1,5 @@
+import strukturOrganisasi from "../images/struktur-organisasi.png"
+
 const Pemerintahan = () => {
     return (
         <div
@@ -63,6 +65,8 @@ const Pemerintahan = () => {
                     </p>
                 </div>
             </div>
+
+            <img src={strukturOrganisasi} alt="Struktur Organisasi Desa" className="w-full max-w-4xl mx-auto mt-10" />
         </div>
     );
 };

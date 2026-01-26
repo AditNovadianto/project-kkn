@@ -1,3 +1,8 @@
+import saranaSekolah from "../images/sarana-sekolah.webp"
+import saranaKesehatan from "../images/sarana-kesehatan.jfif"
+import saranaIbadah from "../images/sarana-ibadah.jfif"
+import saranaInfrastruktur from "../images/sarana-infrastruktur.jpg"
+
 const SaranaPrasarana = () => {
     return (
         <div id="Sarana_dan_Prasarana_Desa" className="px-5 pt-20 pb-5">
@@ -14,9 +19,9 @@ const SaranaPrasarana = () => {
 
             <div className="grid md:grid-cols-4 gap-8">
                 {/* Pendidikan */}
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
                     <img
-                        src="/images/sarana/pendidikan.jpg"
+                        src={saranaSekolah}
                         alt="Sarana Pendidikan"
                         className="w-full h-48 object-cover"
                     />
@@ -32,9 +37,9 @@ const SaranaPrasarana = () => {
                 </div>
 
                 {/* Kesehatan */}
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
                     <img
-                        src="/images/sarana/kesehatan.jpg"
+                        src={saranaKesehatan}
                         alt="Sarana Kesehatan"
                         className="w-full h-48 object-cover"
                     />
@@ -50,9 +55,9 @@ const SaranaPrasarana = () => {
                 </div>
 
                 {/* Ibadah */}
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
                     <img
-                        src="/images/sarana/ibadah.jpg"
+                        src={saranaIbadah}
                         alt="Sarana Ibadah"
                         className="w-full h-48 object-cover"
                     />
@@ -68,9 +73,9 @@ const SaranaPrasarana = () => {
                 </div>
 
                 {/* Infrastruktur */}
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
                     <img
-                        src="/images/sarana/jalan.jpg"
+                        src={saranaInfrastruktur}
                         alt="Infrastruktur Jalan Desa"
                         className="w-full h-48 object-cover"
                     />
