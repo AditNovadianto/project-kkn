@@ -1,44 +1,93 @@
 import desaAllakuang from "../images/desa-allakuang.jpg"
+import { motion } from "framer-motion"
 
 const Beranda = () => {
     return (
         <div id="Beranda" className="min-h-screen px-5 w-full flex items-center justify-center">
-            <div className="flex items-center gap-5 justify-center">
-                <img src={desaAllakuang} alt="Desa Allakuang" className="w-full h-auto rounded-lg" />
+            <motion.div
+                className="flex flex-col lg:flex-row mt-32 items-center gap-5 justify-center"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    hidden: {},
+                    visible: {
+                        transition: { staggerChildren: 0.15 },
+                    },
+                }}
+            >
+                {/* Image */}
+                <motion.img
+                    src={desaAllakuang}
+                    alt="Desa Allakuang"
+                    className="w-full h-auto rounded-lg"
+                    variants={{
+                        hidden: { opacity: 0, x: -40 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                />
 
-                <div>
-                    <h1 className="text-5xl font-bold mb-4">
+                {/* Text */}
+                <motion.div>
+                    <motion.h1
+                        className="text-5xl font-bold mb-4"
+                        variants={{
+                            hidden: { opacity: 0, y: 30 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        transition={{ duration: 0.5 }}
+                    >
                         Desa Allakuang
-                    </h1>
+                    </motion.h1>
 
-                    <div className="w-30 h-2 rounded-full bg-linear-to-r from-[#30364F] to-[#ACBAC4] my-3"></div>
+                    <motion.div
+                        className="w-30 h-2 rounded-full bg-linear-to-r from-[#30364F] to-[#ACBAC4] my-3"
+                        variants={{
+                            hidden: { opacity: 0, scaleX: 0 },
+                            visible: { opacity: 1, scaleX: 1 },
+                        }}
+                        transition={{ duration: 0.4 }}
+                        style={{ originX: 0 }}
+                    />
 
-                    <p className="text-xl font-semibold text-gray-700 mb-2">
+                    <motion.p
+                        className="text-xl font-semibold text-gray-700 mb-2"
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        transition={{ duration: 0.4 }}
+                    >
                         Kecamatan Maritengngae, Kabupaten Sidenreng Rappang
-                    </p>
+                    </motion.p>
 
-                    <p className="italic text-lg text-gray-600 mb-6">
+                    <motion.p
+                        className="italic text-lg text-gray-600 mb-6"
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        transition={{ duration: 0.4 }}
+                    >
                         “Religius, Berkarakter, Cerdas, Sehat, dan Sejahtera”
-                    </p>
+                    </motion.p>
 
-                    <p className="text-gray-700 text-lg mb-8">
+                    <motion.p
+                        className="text-gray-700 text-lg mb-8"
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        transition={{ duration: 0.5 }}
+                    >
                         Desa Allakuang merupakan salah satu desa di Kecamatan Maritengngae,
                         Kabupaten Sidenreng Rappang, Provinsi Sulawesi Selatan. Terletak
                         sekitar ±5 km dari pusat pemerintahan kabupaten, desa ini memiliki
                         potensi unggulan di sektor pertanian, peternakan, pengrajin batu,
                         serta wisata alam dan budaya.
-                    </p>
-                </div>
-            </div>
-
-            {/* <div className="flex justify-center gap-4">
-                <button className="px-6 py-3 bg-blue-600 text-white rounded-lg">
-                    Profil Desa
-                </button>
-                <button className="px-6 py-3 bg-green-600 text-white rounded-lg">
-                    Potensi Desa
-                </button>
-            </div> */}
+                    </motion.p>
+                </motion.div>
+            </motion.div>
         </div>
     )
 }

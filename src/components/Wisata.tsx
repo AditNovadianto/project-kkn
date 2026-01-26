@@ -1,24 +1,75 @@
 import wisataAlam from "../images/wisata-alam.jpg"
 import situsSejarah from "../images/situs-sejarah.jpeg"
 import kawasanWisata from "../images/kawasan-wisata.jpg"
+import { motion } from "framer-motion"
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+}
+
+const fadeScale = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+}
+
+const container = {
+    hidden: {},
+    visible: {
+        transition: { staggerChildren: 0.15 },
+    },
+}
 
 const Wisata = () => {
     return (
         <div id="Wisata_Desa" className="px-5 pt-20 pb-5">
-            <h2 className="text-5xl font-bold text-center mb-4">
+            {/* Header */}
+            <motion.h2
+                className="text-5xl font-bold text-center mb-4"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
                 Wisata Desa
-            </h2>
+            </motion.h2>
 
-            <div className="w-32 h-2 rounded-full bg-linear-to-r from-[#30364F] to-[#ACBAC4] mx-auto mb-12"></div>
+            <motion.div
+                className="w-30 h-2 rounded-full mt-5 bg-linear-to-r from-[#30364F] to-[#ACBAC4] my-3 m-auto mb-10"
+                initial={{ scaleX: 0, opacity: 0 }}
+                whileInView={{ scaleX: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                style={{ originX: 0 }}
+            />
 
-            <p className="text-gray-700 text-center max-w-3xl mx-auto mb-12">
+            <motion.p
+                className="text-gray-700 text-center max-w-3xl mx-auto mb-12"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 Desa Allakuang memiliki potensi wisata alam, situs sejarah, dan kawasan
                 wisata desa yang masih alami serta mudah diakses.
-            </p>
+            </motion.p>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            {/* Cards */}
+            <motion.div
+                className="grid md:grid-cols-3 gap-8"
+                variants={container}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+            >
                 {/* Wisata 1 */}
-                <div className="cursor-pointer group relative rounded-xl overflow-hidden shadow-lg">
+                <motion.div
+                    className="cursor-pointer group relative rounded-xl overflow-hidden shadow-lg"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
                     <img
                         src={wisataAlam}
                         alt="Wisata Alam Allakuang"
@@ -33,10 +84,14 @@ const Wisata = () => {
                             Kawasan wisata alam dengan pemandangan asri dan udara sejuk.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Wisata 2 */}
-                <div className="cursor-pointer group relative rounded-xl overflow-hidden shadow-lg">
+                <motion.div
+                    className="cursor-pointer group relative rounded-xl overflow-hidden shadow-lg"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
                     <img
                         src={situsSejarah}
                         alt="Situs Sejarah Desa"
@@ -51,10 +106,14 @@ const Wisata = () => {
                             Peninggalan sejarah yang menjadi identitas budaya desa.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Wisata 3 */}
-                <div className="cursor-pointer group relative rounded-xl overflow-hidden shadow-lg">
+                <motion.div
+                    className="cursor-pointer group relative rounded-xl overflow-hidden shadow-lg"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
                     <img
                         src={kawasanWisata}
                         alt="Wisata Desa"
@@ -69,15 +128,22 @@ const Wisata = () => {
                             Destinasi wisata desa yang ramah keluarga dan masyarakat.
                         </p>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
             {/* CTA */}
-            <div className="text-center mt-12">
+            <motion.div
+                className="text-center mt-12"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <button className="cursor-pointer px-6 py-3 bg-[#30364F] text-white rounded-lg hover:bg-[#1f2436] transition">
                     Lihat Semua Wisata
                 </button>
-            </div>
+            </motion.div>
         </div>
     )
 }

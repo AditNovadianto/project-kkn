@@ -1,11 +1,14 @@
 import logo from "../images/logo.png"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Menu, X } from "lucide-react"
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@radix-ui/react-navigation-menu"
 import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Navbar = () => {
     const [section, setSection] = useState("Beranda")
     const [isScrolled, setIsScrolled] = useState(false)
+    const [showNavbar, setShowNavbar] = useState(false)
+    const [openProfil, setOpenProfil] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,9 +21,9 @@ const Navbar = () => {
 
     return (
         <div className="z-100 fixed top-0 left-0 right-0 flex items-center justify-between pr-5 py-2 bg-[#F0F0DB] shadow-md">
-            <img className={`${isScrolled ? "w-80" : "w-100"} transition-all`} src={logo} alt="" />
+            <img className={`${isScrolled ? "w-64 md:w-80" : "w-72 md:w-100"} transition-all`} src={logo} alt="" />
 
-            <div className="flex items-center gap-10 font-semibold">
+            <div className="hidden xl:flex items-center gap-10 font-semibold">
                 <a href="#Beranda" onClick={() => setSection("Beranda")} className={`${section === "Beranda" ? "bg-[#30364F] text-white hover:bg-[#4d5268]" : "bg-[#F0F0DB] hover:bg-[#E1D9BC]"} transition-all text-center px-3 py-2 rounded-lg`}>Beranda</a>
 
                 <NavigationMenu>
@@ -81,6 +84,109 @@ const Navbar = () => {
 
                 <a href="#Kontak" onClick={() => setSection("Kontak")} className={`${section === "Kontak" ? "bg-[#30364F] text-white hover:bg-[#4d5268]" : "bg-[#F0F0DB] hover:bg-[#E1D9BC]"} transition-all text-center px-3 py-2 rounded-lg`}>Kontak</a>
             </div>
+
+            <button onClick={() => setShowNavbar(!showNavbar)} className="block xl:hidden"><Menu size={30} /></button>
+
+            <AnimatePresence>
+                {showNavbar && (
+                    <motion.div
+                        className="fixed inset-0 z-50 xl:hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        {/* Overlay */}
+                        <div
+                            className="absolute inset-0 bg-black/40"
+                            onClick={() => setShowNavbar(false)}
+                        />
+
+                        {/* Drawer */}
+                        <motion.div
+                            className="absolute right-0 top-0 h-full w-72 bg-[#F0F0DB] p-6 shadow-xl"
+                            initial={{ x: "100%" }}
+                            animate={{ x: 0 }}
+                            exit={{ x: "100%" }}
+                            transition={{ duration: 0.35 }}
+                        >
+                            {/* Header */}
+                            <div className="flex justify-between items-center mb-6">
+                                <span className="font-bold text-lg">Menu</span>
+                                <button onClick={() => setShowNavbar(false)}>
+                                    <X />
+                                </button>
+                            </div>
+
+                            <div className="flex flex-col gap-4 font-semibold text-[#30364F]">
+                                {/* Beranda */}
+                                <a
+                                    href="#Beranda"
+                                    onClick={() => setShowNavbar(false)}
+                                    className="px-3 py-2 rounded-md hover:bg-[#E1D9BC] transition"
+                                >
+                                    Beranda
+                                </a>
+
+                                {/* Profil Desa */}
+                                <button
+                                    onClick={() => setOpenProfil(!openProfil)}
+                                    className="flex justify-between items-center px-3 py-2 rounded-md hover:bg-[#E1D9BC] transition"
+                                >
+                                    Profil Desa
+                                    <motion.span animate={{ rotate: openProfil ? 180 : 0 }}>
+                                        <ChevronDown />
+                                    </motion.span>
+                                </button>
+
+                                <AnimatePresence>
+                                    {openProfil && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.25 }}
+                                            className="ml-3 mt-1 flex flex-col gap-2 overflow-hidden border-l-2 border-[#ACBAC4] pl-3"
+                                        >
+                                            {[
+                                                ["Profil Desa", "#Beranda"],
+                                                ["Demografi Desa", "#Demografi_Desa"],
+                                                ["Pemerintahan Desa", "#Pemerintahan_Desa"],
+                                                ["Potensi Desa", "#Potensi_Desa"],
+                                            ].map(([label, href]) => (
+                                                <a
+                                                    key={label}
+                                                    href={href}
+                                                    onClick={() => setShowNavbar(false)}
+                                                    className="px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-[#E1D9BC] transition"
+                                                >
+                                                    {label}
+                                                </a>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                {/* Other Menu */}
+                                {[
+                                    ["Wisata Desa", "#Wisata_Desa"],
+                                    ["Sarana & Prasarana", "#Sarana_dan_Prasarana_Desa"],
+                                    ["Galeri Desa", "#Galeri_Desa"],
+                                    ["Kontak", "#Kontak"],
+                                ].map(([label, href]) => (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        onClick={() => setShowNavbar(false)}
+                                        className="px-3 py-2 rounded-md hover:bg-[#E1D9BC] transition"
+                                    >
+                                        {label}
+                                    </a>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

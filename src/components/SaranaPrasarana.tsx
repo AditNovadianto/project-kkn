@@ -2,24 +2,75 @@ import saranaSekolah from "../images/sarana-sekolah.webp"
 import saranaKesehatan from "../images/sarana-kesehatan.jfif"
 import saranaIbadah from "../images/sarana-ibadah.jfif"
 import saranaInfrastruktur from "../images/sarana-infrastruktur.jpg"
+import { motion } from "framer-motion"
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+}
+
+const fadeScale = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+}
+
+const container = {
+    hidden: {},
+    visible: {
+        transition: { staggerChildren: 0.15 },
+    },
+}
 
 const SaranaPrasarana = () => {
     return (
         <div id="Sarana_dan_Prasarana_Desa" className="px-5 pt-20 pb-5">
-            <h2 className="text-5xl font-bold text-center mb-4">
+            {/* Header */}
+            <motion.h2
+                className="text-5xl font-bold text-center mb-4"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
                 Sarana dan Prasarana Desa
-            </h2>
+            </motion.h2>
 
-            <div className="w-32 h-2 rounded-full bg-linear-to-r from-[#30364F] to-[#ACBAC4] mx-auto mb-12"></div>
+            <motion.div
+                className="w-30 h-2 rounded-full mt-5 bg-linear-to-r from-[#30364F] to-[#ACBAC4] my-3 m-auto mb-10"
+                initial={{ scaleX: 0, opacity: 0 }}
+                whileInView={{ scaleX: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                style={{ originX: 0 }}
+            />
 
-            <p className="text-gray-700 text-center max-w-3xl mx-auto mb-12">
+            <motion.p
+                className="text-gray-700 text-center max-w-3xl mx-auto mb-12"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 Desa Allakuang didukung oleh berbagai sarana dan prasarana
                 untuk menunjang pelayanan publik dan kesejahteraan masyarakat.
-            </p>
+            </motion.p>
 
-            <div className="grid md:grid-cols-4 gap-8">
+            {/* Cards */}
+            <motion.div
+                className="grid md:grid-cols-4 gap-8"
+                variants={container}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+            >
                 {/* Pendidikan */}
-                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <motion.div
+                    className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
                     <img
                         src={saranaSekolah}
                         alt="Sarana Pendidikan"
@@ -34,10 +85,14 @@ const SaranaPrasarana = () => {
                             untuk mendukung pendidikan masyarakat.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Kesehatan */}
-                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <motion.div
+                    className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
                     <img
                         src={saranaKesehatan}
                         alt="Sarana Kesehatan"
@@ -52,10 +107,14 @@ const SaranaPrasarana = () => {
                             Poliklinik, dan Posyandu.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Ibadah */}
-                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <motion.div
+                    className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
                     <img
                         src={saranaIbadah}
                         alt="Sarana Ibadah"
@@ -70,10 +129,14 @@ const SaranaPrasarana = () => {
                             oleh masyarakat desa.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Infrastruktur */}
-                <div className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <motion.div
+                    className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
                     <img
                         src={saranaInfrastruktur}
                         alt="Infrastruktur Jalan Desa"
@@ -88,16 +151,23 @@ const SaranaPrasarana = () => {
                             menunjang mobilitas masyarakat.
                         </p>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
-            {/* Closing text */}
-            <div className="mt-14 text-center">
+            {/* Closing Text */}
+            <motion.div
+                className="mt-14 text-center"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <p className="text-lg font-semibold text-gray-800">
                     Fasilitas desa terus dikembangkan untuk meningkatkan
                     kualitas pelayanan dan kesejahteraan masyarakat.
                 </p>
-            </div>
+            </motion.div>
         </div>
     )
 }
