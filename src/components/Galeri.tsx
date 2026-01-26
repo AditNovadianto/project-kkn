@@ -81,7 +81,7 @@ const Galeri = () => {
                 >
                     <button
                         onClick={() => setVisible((prev) => prev + 4)}
-                        className="px-6 py-3 bg-[#30364F] text-white rounded-lg hover:bg-[#1f2436] transition"
+                        className="cursor-pointer px-6 py-3 bg-[#30364F] text-white rounded-lg hover:bg-[#1f2436] transition-all"
                     >
                         Tampilkan Lebih Banyak
                     </button>
