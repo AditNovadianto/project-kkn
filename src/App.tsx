@@ -1,5 +1,6 @@
 import Beranda from "./components/Beranda"
 import Demografi from "./components/Demografi"
+import Galeri from "./components/Galeri"
 import Navbar from "./components/Navbar"
 import Pemerintahan from "./components/Pemerintahan"
 import Potensi from "./components/Potensi"
@@ -22,6 +23,8 @@ const App = () => {
       <Wisata />
 
       <SaranaPrasarana />
+
+      <Galeri />
     </div>
   )
 }
