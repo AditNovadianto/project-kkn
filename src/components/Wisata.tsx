@@ -40,7 +40,7 @@ const Wisata = () => {
                 initial={{ scaleX: 0, opacity: 0 }}
                 whileInView={{ scaleX: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 style={{ originX: 0 }}
             />
 

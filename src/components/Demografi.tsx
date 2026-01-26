@@ -26,7 +26,7 @@ const container = {
 
 const Demografi = () => {
     return (
-        <div id="Demografi_Desa" className="px-5 pb-5 pt-20">
+        <div id="Demografi_Desa" className="px-5 pb-5 pt-20 overflow-hidden">
             {/* ================= DEMOGRAFI ================= */}
             <motion.h2
                 className="text-5xl font-bold text-center"
@@ -44,7 +44,7 @@ const Demografi = () => {
                 initial={{ scaleX: 0, opacity: 0 }}
                 whileInView={{ scaleX: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 style={{ originX: 0 }}
             />
 
@@ -97,7 +97,7 @@ const Demografi = () => {
                 initial={{ scaleX: 0, opacity: 0 }}
                 whileInView={{ scaleX: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 style={{ originX: 0 }}
             />
 
@@ -150,7 +150,7 @@ const Demografi = () => {
                 initial={{ scaleX: 0, opacity: 0 }}
                 whileInView={{ scaleX: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 style={{ originX: 0 }}
             />
 
