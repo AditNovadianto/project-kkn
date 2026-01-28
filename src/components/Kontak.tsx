@@ -95,8 +95,17 @@ const Kontak = () => {
                         Lokasi Desa
                     </h3>
 
-                    <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-                        Peta Lokasi Desa
+                    <div className="w-full h-64 rounded-lg overflow-hidden">
+                        <iframe
+                            title="Lokasi Desa Allakuang"
+                            src="https://www.google.com/maps?q=Desa%20Allakuang%20Maritengngae%20Sidenreng%20Rappang&output=embed"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
                     </div>
                 </motion.div>
             </div>

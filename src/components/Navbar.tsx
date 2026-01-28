@@ -21,7 +21,9 @@ const Navbar = () => {
 
     return (
         <div className="z-100 fixed top-0 left-0 right-0 flex items-center justify-between pr-5 py-2 bg-[#F0F0DB] shadow-md">
-            <img className={`${isScrolled ? "w-64 md:w-80" : "w-72 md:w-100"} transition-all`} src={logo} alt="" />
+            <a href="#">
+                <img className={`${isScrolled ? "w-64 md:w-80" : "w-72 md:w-100"} transition-all`} src={logo} alt="" />
+            </a>
 
             <div className="hidden xl:flex items-center gap-10 font-semibold">
                 <a href="#Beranda" onClick={() => setSection("Beranda")} className={`${section === "Beranda" ? "bg-[#30364F] text-white hover:bg-[#4d5268]" : "bg-[#F0F0DB] hover:bg-[#E1D9BC]"} transition-all text-center px-3 py-2 rounded-lg`}>Beranda</a>
