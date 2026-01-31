@@ -18,12 +18,29 @@ import g14 from "../images/galery/images14.jpeg"
 import g15 from "../images/galery/images15.jpeg"
 import g16 from "../images/galery/images16.jpeg"
 import g17 from "../images/galery/images17.jpeg"
+import g18 from "../images/galery/images18.jpeg"
+import g19 from "../images/galery/images19.jpeg"
+import g20 from "../images/galery/images20.jpeg"
+import g21 from "../images/galery/images21.jpeg"
+import g22 from "../images/galery/images22.jpeg"
+import g23 from "../images/galery/images23.jpeg"
+import g24 from "../images/galery/images24.jpeg"
+import g25 from "../images/galery/images25.jpeg"
+import g26 from "../images/galery/images26.jpeg"
+import g27 from "../images/galery/images27.jpeg"
+import g28 from "../images/galery/images28.jpeg"
+import g29 from "../images/galery/images29.jpeg"
+import g30 from "../images/galery/images30.jpeg"
+import g31 from "../images/galery/images31.jpeg"
+import g32 from "../images/galery/images32.jpeg"
 
 const images = [
     g1, g2, g3, g4, g5,
     g6, g7, g8, g9, g10,
     g11, g12, g13, g14, g15,
-    g16, g17,
+    g16, g17, g18, g19, g20, g21, g22, g23, g24, g25,
+    g26, g27, g28, g29, g30,
+    g31, g32
 ]
 
 const Galeri = () => {
