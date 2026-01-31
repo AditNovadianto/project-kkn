@@ -66,7 +66,8 @@ const Potensi = () => {
 
                     <p className="text-gray-700 mb-4">
                         Potensi batu gunung yang dikelola masyarakat sebagai bahan
-                        bangunan dan konstruksi lokal.
+                        bangunan dan konstruksi lokal. Selain dari itu batunya juga dapat diolah menjadi
+                        batu nisan, cobek, dan masih banyak lagi.
                     </p>
 
                     <span className="text-sm font-semibold text-[#30364F]">
@@ -113,7 +114,7 @@ const Potensi = () => {
                     </h3>
 
                     <p className="text-gray-700 mb-4">
-                        Peternakan ayam kampung, broiler, bebek, sapi, dan kambing
+                        Peternakan ayam petelur, bebek, sapi, dan kambing
                         skala rumah tangga dan kelompok.
                     </p>
 

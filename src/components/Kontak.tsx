@@ -188,6 +188,8 @@ const Kontak = () => {
                     Pemerintah Desa Allakuang siap melayani masyarakat
                     dengan terbuka, transparan, dan profesional.
                 </p>
+
+                <p className="text-lg font-semibold text-[#F0F0DB] mt-5">KKN-T UNHAS GEL.115</p>
             </motion.div>
         </div>
     )
