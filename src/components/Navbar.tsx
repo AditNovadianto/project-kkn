@@ -60,6 +60,14 @@ const Navbar = () => {
 
                                 <NavigationMenuLink
                                     className="cursor-pointer px-3 py-2 rounded-md transition-all duration-150  hover:bg-gray-100 hover:text-gray-900"
+                                    href="#Batas_Desa"
+                                    onClick={() => setSection("Batas Desa")}
+                                >
+                                    Batas Desa
+                                </NavigationMenuLink>
+
+                                <NavigationMenuLink
+                                    className="cursor-pointer px-3 py-2 rounded-md transition-all duration-150  hover:bg-gray-100 hover:text-gray-900"
                                     href="#Pemerintahan_Desa"
                                     onClick={() => setSection("Pemerintahan Desa")}
                                 >
@@ -72,6 +80,14 @@ const Navbar = () => {
                                     onClick={() => setSection("Potensi Desa")}
                                 >
                                     Potensi Desa
+                                </NavigationMenuLink>
+
+                                <NavigationMenuLink
+                                    className="cursor-pointer px-3 py-2 rounded-md transition-all duration-150  hover:bg-gray-100 hover:text-gray-900"
+                                    href="#Sejarah_Desa"
+                                    onClick={() => setSection("Sejarah Desa")}
+                                >
+                                    Sejarah Desa
                                 </NavigationMenuLink>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -152,8 +168,10 @@ const Navbar = () => {
                                             {[
                                                 ["Profil Desa", "#Beranda"],
                                                 ["Demografi Desa", "#Demografi_Desa"],
+                                                ["Batas Desa", "#Batas_Desa"],
                                                 ["Pemerintahan Desa", "#Pemerintahan_Desa"],
                                                 ["Potensi Desa", "#Potensi_Desa"],
+                                                ["Sejarah Desa", "#Sejarah_Desa"],
                                             ].map(([label, href]) => (
                                                 <a
                                                     key={label}

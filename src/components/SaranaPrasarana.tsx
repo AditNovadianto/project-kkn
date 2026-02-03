@@ -1,7 +1,8 @@
 import saranaSekolah from "../images/sarana-sekolah.webp"
 import saranaKesehatan from "../images/sarana-kesehatan.jfif"
 import saranaIbadah from "../images/sarana-ibadah.jfif"
-import saranaInfrastruktur from "../images/sarana-infrastruktur.jpg"
+import saranaInfrastruktur from "../images/sarana-infrastruktur.jpeg"
+import saranaPasar from "../images/sarana-pasar.webp"
 import { motion } from "framer-motion"
 
 const fadeUp = {
@@ -59,7 +60,7 @@ const SaranaPrasarana = () => {
 
             {/* Cards */}
             <motion.div
-                className="grid md:grid-cols-4 gap-8"
+                className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8"
                 variants={container}
                 initial="hidden"
                 whileInView="visible"
@@ -104,7 +105,7 @@ const SaranaPrasarana = () => {
                         </h3>
                         <p className="text-gray-700">
                             Fasilitas kesehatan berupa Puskesmas Pembantu,
-                            Poliklinik, dan Posyandu.
+                            Poliklinik, dan Pustu.
                         </p>
                     </div>
                 </motion.div>
@@ -149,6 +150,27 @@ const SaranaPrasarana = () => {
                         <p className="text-gray-700">
                             Jalan desa telah dilengkapi aspal dan beton untuk
                             menunjang mobilitas masyarakat.
+                        </p>
+                    </div>
+                </motion.div>
+
+                {/* Pasar */}
+                <motion.div
+                    className="cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+                    variants={fadeScale}
+                    transition={{ duration: 0.4 }}
+                >
+                    <img
+                        src={saranaPasar}
+                        alt="Pasar Desa Allakuang"
+                        className="w-full h-48 object-cover"
+                    />
+                    <div className="p-5">
+                        <h3 className="text-xl font-semibold mb-2">
+                            Pasar
+                        </h3>
+                        <p className="text-gray-700">
+                            Pasar tradisional yang menyediakan berbagai kebutuhan, yang buka selama 2 kali dalam seminggu dari hari Senin dan Jumat di jam 06:00 - 11:00 WITA.
                         </p>
                     </div>
                 </motion.div>

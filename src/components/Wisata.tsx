@@ -140,11 +140,11 @@ const Wisata = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
             >
-                <button className="cursor-pointer px-6 py-3 bg-[#30364F] text-white rounded-lg hover:bg-[#1f2436] transition">
+                <a href="https://sites.google.com/view/wisatadesaallakuang" target="_blank" className="cursor-pointer px-6 py-4 bg-[#30364F] text-white rounded-lg hover:bg-[#1f2436] transition">
                     Lihat Semua Wisata
-                </button>
+                </a>
             </motion.div>
-        </div>
+        </div >
     )
 }
 
