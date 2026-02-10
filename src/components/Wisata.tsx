@@ -1,6 +1,6 @@
-import wisataAlam from "../images/wisata-alam.jpg"
-import situsSejarah from "../images/situs-sejarah.jpeg"
-import kawasanWisata from "../images/kawasan-wisata.jpg"
+import wisataMasjidTuaJerrae from "../images/wisata-masjid-tua-jerrae.jpg"
+import wisataMakanNeneMallomo from "../images/wisata-makam-nene-mallomo.jpg"
+import wisataPemandianBungngeCitta from "../images/wisata-pemandian-bungnge-citta.jpg"
 import { motion } from "framer-motion"
 
 const fadeUp = {
@@ -71,17 +71,17 @@ const Wisata = () => {
                     transition={{ duration: 0.4 }}
                 >
                     <img
-                        src={wisataAlam}
-                        alt="Wisata Alam Allakuang"
+                        src={wisataMasjidTuaJerrae}
+                        alt="Masjid Tua Jerrae"
                         className="w-full h-72 object-cover group-hover:scale-110 transition duration-500"
                     />
 
                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
                         <h3 className="text-white text-xl font-semibold">
-                            Wisata Alam Allakuang
+                            Masjid Tua Jerrae
                         </h3>
                         <p className="text-gray-200 text-sm mt-2">
-                            Kawasan wisata alam dengan pemandangan asri dan udara sejuk.
+                            Masjid Tua Jerra’E Allakuang adalah salah satu masjid tertua di Sulawesi Selatan, didirikan pada tahun 1609 M. Masjid ini menjadi saksi awal penyebaran Islam di Kerajaan Sidenreng dan hingga kini masih aktif digunakan sebagai tempat ibadah.
                         </p>
                     </div>
                 </motion.div>
@@ -93,17 +93,17 @@ const Wisata = () => {
                     transition={{ duration: 0.4 }}
                 >
                     <img
-                        src={situsSejarah}
-                        alt="Situs Sejarah Desa"
+                        src={wisataMakanNeneMallomo}
+                        alt="Makam Nene Mallomo"
                         className="w-full h-72 object-cover group-hover:scale-110 transition duration-500"
                     />
 
                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
                         <h3 className="text-white text-xl font-semibold">
-                            Situs Sejarah Desa
+                            Makam Nene Mallomo
                         </h3>
                         <p className="text-gray-200 text-sm mt-2">
-                            Peninggalan sejarah yang menjadi identitas budaya desa.
+                            Makam Nene Mallomo merupakan situs bersejarah penting di Sidenreng, tempat peristirahatan tokoh adat Bugis yang dikenal akan kebijaksanaan, kejujuran, dan keteguhannya dalam menegakkan keadilan.
                         </p>
                     </div>
                 </motion.div>
@@ -115,17 +115,17 @@ const Wisata = () => {
                     transition={{ duration: 0.4 }}
                 >
                     <img
-                        src={kawasanWisata}
-                        alt="Wisata Desa"
+                        src={wisataPemandianBungngeCitta}
+                        alt="Pemandian Bungnge Citta"
                         className="w-full h-72 object-cover group-hover:scale-110 transition duration-500"
                     />
 
                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
                         <h3 className="text-white text-xl font-semibold">
-                            Kawasan Wisata Desa
+                            Pemandian Bungnge Citta
                         </h3>
                         <p className="text-gray-200 text-sm mt-2">
-                            Destinasi wisata desa yang ramah keluarga dan masyarakat.
+                            Permandian Bungnge Citta merupakan wisata alam unggulan di Desa Allakuang dengan sumber mata air alami yang jernih dan menyegarkan, serta telah lama dimanfaatkan oleh masyarakat setempat.
                         </p>
                     </div>
                 </motion.div>

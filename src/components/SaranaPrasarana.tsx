@@ -1,8 +1,8 @@
 import saranaSekolah from "../images/sarana-sekolah.webp"
-import saranaKesehatan from "../images/sarana-kesehatan.jfif"
-import saranaIbadah from "../images/sarana-ibadah.jfif"
+import saranaKesehatan from "../images/sarana-kesehatan.jpeg"
+import saranaIbadah from "../images/sarana-ibadah.jpeg"
 import saranaInfrastruktur from "../images/sarana-infrastruktur.jpeg"
-import saranaPasar from "../images/sarana-pasar.webp"
+import saranaPasar from "../images/sarana-pasar.jpeg"
 import { motion } from "framer-motion"
 
 const fadeUp = {
