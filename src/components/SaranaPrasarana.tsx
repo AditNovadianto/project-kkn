@@ -1,4 +1,4 @@
-import saranaSekolah from "../images/sarana-sekolah.webp"
+import saranaSekolah from "../images/sarana-sekolah.jpeg"
 import saranaKesehatan from "../images/sarana-kesehatan.jpeg"
 import saranaIbadah from "../images/sarana-ibadah.jpeg"
 import saranaInfrastruktur from "../images/sarana-infrastruktur.jpeg"
